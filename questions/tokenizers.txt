@@ -1,0 +1,45 @@
+**1. What are the types of tokenizers, and how do they compare?**  
+- **Types**: Word-level, Subword-level (WordPiece, BPE), Character-level, SentencePiece.  
+- **Comparison**:  
+  - Word-level: Simple, struggles with OOV words.  
+  - Subword-level: Balances OOV handling, vocab size, and sequence length.  
+  - Character-level: No OOV, longer sequences, computationally expensive.  
+
+**2. How can you extend a tokenizer?**  
+- Add new tokens to the vocabulary.  
+- **When**: For domain-specific terms (e.g., medical jargon).  
+- **Retrain**: Necessary for many new tokens or language changes.  
+- **Steps**: Update vocabulary, adjust embedding layer.  
+
+**3. How do regular tokens differ from special tokens?**  
+- **Regular tokens**: Represent words/subwords.  
+- **Special tokens**: Reserved for tasks (e.g., `[CLS]`, `<PAD>`).  
+
+**4. Why don’t transformers use lemmatization?**  
+- Lemmatization loses nuanced information.  
+- Transformers rely on raw text for richer context and semantics.  
+
+**5. How is a tokenizer trained?**  
+- **WordPiece**: Merges frequent subword pairs.  
+- **BPE**: Combines character sequences based on frequency.  
+- **Example**:  
+  - Input: "playing, plays".  
+  - Start: ["p", "l", "a", "y", "ing"], ["p", "l", "a", "ys"].  
+  - Merge: ["play", "ing"], ["play", "s"].  
+
+**6. What position does the CLS vector occupy, and why?**  
+- **Position**: First token in the sequence.  
+- **Reason**: Represents sequence summary for classification tasks.  
+
+**7. Which tokenizer is used in BERT and GPT?**  
+- **BERT**: WordPiece.  
+- **GPT**: Byte Pair Encoding (BPE).  
+
+**8. How do modern tokenizers handle OOV words?**  
+- Break OOV words into subwords or characters using methods like WordPiece or BPE.  
+
+**9. How does tokenizer vocab size affect training, and how to choose it?**  
+- **Impact**:  
+  - Large vocab: Precise, longer training, large embeddings.  
+  - Small vocab: Efficient, risks OOV.  
+- **Choice**: Balance size and sequence length based on dataset/domain.

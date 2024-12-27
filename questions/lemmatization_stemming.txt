@@ -1,0 +1,43 @@
+**1. What are lemmatization and stemming, and how do they differ?**  
+- **Lemmatization**: Converts words to their dictionary form (lemma) while considering context (e.g., "running" → "run").  
+- **Stemming**: Reduces words to their root form, often truncating endings without context (e.g., "running" → "runn").  
+
+---
+
+**2. What algorithms are used for stemming? When are they used?**  
+- **Algorithm**: Porter Stemmer.  
+- **Use Cases**:  
+  - Quick text normalization for large datasets.  
+  - Tasks where slight inaccuracies in word roots are acceptable (e.g., search engines).  
+
+---
+
+**3. What algorithms are used for lemmatization? When are they used?**  
+- **Algorithm**: WordNet Lemmatizer.  
+- **Use Cases**:  
+  - Context-sensitive applications (e.g., sentiment analysis, machine translation).  
+  - Tasks requiring correct and meaningful base forms of words.  
+
+---
+
+**4. Why choose lemmatization over stemming?**  
+- Lemmatization preserves meaning by considering word context and grammar, making it more precise for NLP tasks.  
+
+---
+
+**5. What are the trade-offs between stemming and lemmatization?**  
+- **Stemming**: Faster, less accurate.  
+- **Lemmatization**: Slower, more accurate due to context-aware processing.  
+
+--- 
+
+**6. What are general methods for text preprocessing?**  
+- Lowercasing.  
+- Removing punctuation, stopwords, and special characters.  
+- Tokenization.  
+- Lemmatization or stemming (for normalization).  
+
+--- 
+
+**7. When would you avoid lemmatization or stemming?**  
+- Avoid when raw text context or word structure is critical (e.g., for transformers or contextual embeddings).  
